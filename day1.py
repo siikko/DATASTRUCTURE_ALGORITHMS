@@ -27,6 +27,21 @@ def dec_oct(n) -> int:
         return ""
     else:
         return dec_oct(n//8) + str(n%8)
-n = int(input())
-print(dec_oct(n))
+#n = int(input())
+#print(dec_oct(n))
 
+
+
+#입력된 숫자까지의 합을 구하기
+#O(n)의 시간을 가진다.
+def hap(n)->int:
+    total=0 #1번
+    for i in range(1,n+1):
+        total+=i #n번
+    return total
+n = int(input()) #1번
+print(hap(n))    #1번
+#총 3+n번
+
+
+#
