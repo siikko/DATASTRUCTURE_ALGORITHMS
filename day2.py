@@ -1,23 +1,10 @@
-class Node:
-    def __init__(self,data,next=None):
-        self.data=data
-        self.next=next
+from collections import  deque
 
-class LinkedList:
-    def __init__(self):
-        self.head=None
+d=deque()
+d.append(7)
+d.append(-11)
+d.append(8)
 
-    def append(self,data):
-        if not self.head:
-            self.head=Node(data)
-            return #반환값없이 return만 써줘도 됨.
-        current=self.head
-        while current.next:      # if next node exist
-            current=current.next #move
-        current.next=Node(data)
-
-if __name__=="__main__" :
-    l=LinkedList()
-    l.append(7)
-    l.append(-11)
-    l.append(8)
+if __name__=="__main__":
+    for data in d:
+        print(data)
