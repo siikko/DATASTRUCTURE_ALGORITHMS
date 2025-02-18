@@ -1,29 +1,23 @@
-class Stack:
+class Node:
+    def __init__(self,data,next=None):
+        self.data=data
+        self.next=next
+
+class LinkedList:
     def __init__(self):
-        self.items=list() #스택만들면 제일 먼저하는 것: 리스트 만들기
+        self.head=None
 
-    def push(self,data)->object:
-        self.items.append(data)
+    def append(self,data):
+        if not self.head:
+            self.head=Node(data)
+            return #반환값없이 return만 써줘도 됨.
+        current=self.head
+        while current.next:      # if next node exist
+            current=current.next #move
+        current.next=Node(data)
 
-    def pop(self)->object:
-        return self.items.pop() #리턴 후, 삭제
-
-    def size(self)->int:
-        return len(self.items)
-
-    def peek(self)->object:
-        return self.items[-1] #확인용도
-
-    def is_empty(self)->bool:
-        return len(self.items)==0
-
-s1=Stack()
-s1.push(-9)
-s1.push(11)
-s1.push(977)
-print(s1.pop())
-print(s1.peek())
-print(s1.peek())
-print(s1.pop())
-print(s1.pop())
-print(s1.is_empty())
+if __name__=="__main__" :
+    l=LinkedList()
+    l.append(7)
+    l.append(-11)
+    l.append(8)
