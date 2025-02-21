@@ -11,6 +11,24 @@ def bubble_sort(lst):
             return lst
     return lst
 lst=[2,7,1,9]
+print("bubble_sort예시")
 print(bubble_sort(lst))
 lst_=[1,2,3,4]
+print("bubble_sort예시")
 print(bubble_sort(lst_))
+
+def insertion_sort(lst):
+    for i in range(1,len(lst)):
+        value=lst[i]
+        while i>0 and lst[i-1]>value:
+            lst[i]=lst[i-1]
+            i=i-1
+        lst[i]=value
+    return lst
+
+lst=[2,7,1,9]
+print("insertion_sort예시")
+print(insertion_sort(lst))
+lst_=[1,2,3,4]
+print("insertion_sort예시")
+print(insertion_sort(lst_))
